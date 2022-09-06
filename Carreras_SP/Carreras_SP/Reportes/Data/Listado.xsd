@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Listado" targetNamespace="http://tempuri.org/Listado.xsd" xmlns:mstns="http://tempuri.org/Listado.xsd" xmlns="http://tempuri.org/Listado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=DESKTOP-72P6KAS\SQLEXPRESS;Initial Catalog=CarrerasBD_Local;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="desktop-72p6kas\sqlexpress.CarrerasBD_Local.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTListadoTableAdapter" GeneratorDataComponentClassName="DTListadoTableAdapter" Name="DTListado" UserDataComponentName="DTListadoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="desktop-72p6kas\sqlexpress.CarrerasBD_Local.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DetalleCarreras.anio_cursado, DetalleCarreras.cuatrimestre, Asignaturas.nombre
+FROM            Asignaturas INNER JOIN
+                         DetalleCarreras ON Asignaturas.id_asignatura = DetalleCarreras.id_asignatura INNER JOIN
+                         Carreras ON DetalleCarreras.id_carrera = Carreras.id_carrera</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="anio_cursado" DataSetColumn="anio_cursado" />
+              <Mapping SourceColumn="cuatrimestre" DataSetColumn="cuatrimestre" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Listado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="Listado" msprop:Generator_DataSetName="Listado">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTListado" msprop:Generator_RowEvHandlerName="DTListadoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTListadoRowDeleted" msprop:Generator_RowDeletingName="DTListadoRowDeleting" msprop:Generator_RowEvArgName="DTListadoRowChangeEvent" msprop:Generator_TablePropName="DTListado" msprop:Generator_RowChangedName="DTListadoRowChanged" msprop:Generator_RowChangingName="DTListadoRowChanging" msprop:Generator_TableClassName="DTListadoDataTable" msprop:Generator_RowClassName="DTListadoRow" msprop:Generator_TableVarName="tableDTListado" msprop:Generator_UserTableName="DTListado">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="anio_cursado" msprop:Generator_ColumnPropNameInRow="anio_cursado" msprop:Generator_ColumnPropNameInTable="anio_cursadoColumn" msprop:Generator_ColumnVarNameInTable="columnanio_cursado" msprop:Generator_UserColumnName="anio_cursado" type="xs:unsignedByte" />
+              <xs:element name="cuatrimestre" msprop:Generator_ColumnPropNameInRow="cuatrimestre" msprop:Generator_ColumnPropNameInTable="cuatrimestreColumn" msprop:Generator_ColumnVarNameInTable="columncuatrimestre" msprop:Generator_UserColumnName="cuatrimestre" type="xs:unsignedByte" />
+              <xs:element name="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
